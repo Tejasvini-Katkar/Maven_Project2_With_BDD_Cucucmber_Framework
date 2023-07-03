@@ -1,0 +1,122 @@
+Error 1:
+E:\ cd E:\Eclipse2022-03_Workspace\Maven_Project2_With_BDD_Cucucmber_Framework
+mvn clean install 
+After enter getting bellow error-- 
+**Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompil error
+
+Ans-->In Eclipse pom.xml remove the plugin.
+
+ <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.1</version>
+  <configuration>
+  <source>1.8</source>
+  <target>1.8</target>
+  <encoding>UFT-8</encoding>
+  </configuration>
+  </plugin>
+
+Remaining pom.xml is bellow-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>Maven_Project2_With_BDD_Cucucmber_Framework</groupId>
+  <artifactId>Maven_Project2_With_BDD_Cucucmber_Framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Maven_Project2_With_BDD_Cucucmber_Framework</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <build>
+  <plugins>
+ 
+  <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M5</version>
+  </plugin>
+  </plugins>
+  </build>
+
+  <dependencies>
+  
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.10.1</version>
+</dependency>
+  
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>7.10.1</version>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+     <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+       <version>4.13.1</version>
+        <scope>test</scope></dependency>
+
+<dependency>
+    <groupId>org.apache.maven</groupId>
+    <artifactId>maven-core</artifactId>
+    <version>3.8.6</version>
+</dependency>
+
+  <dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version> 4.8.3 </version>
+   </dependency>
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-chrome-driver</artifactId>
+    <version>4.8.3</version>
+</dependency>
+
+ </dependencies>
+</project>
+
+
+
+
+
+
+
+Error 2---> [ERROR] while running projectn on Jenkins like...
+Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:
+test (default-test) on project Maven_Project2_With_BDD_Cucucmber_Framework: There are test failures.
+
+Ans--->
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M5</version>
+  </plugin>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
